@@ -41,12 +41,14 @@ POST
 /accounts
 
 Create a new account
+```bash
 {
     "name":"account1",
     "currency":"KES",
     "treasury":false,
     "balance":10000
 }
+```
 
 GET
 
@@ -60,17 +62,19 @@ POST
 
 Transfer money between accounts
 
-
+```bash
 {
     "fromAccountId":1,
     "toAccountId":2,
     "amount":100
 
 }
+```
 
 /accounts/transfer (from non-treasury accounts)
 
 Transfer money between accounts
+```bash
 
 {
     "fromAccountId":3,
@@ -78,6 +82,7 @@ Transfer money between accounts
     "amount":10000
 
 }
+```
 
 what distinguishes  a treasury account from a non-treasury account is on the request body ensure treasury field is true when account is treasury  "treasury":true, and ensure treasure field is false when account is  non-treasury "treasury":false .
 
