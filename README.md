@@ -220,13 +220,13 @@ Another important feature I added is pagination on the Endpoint for listing acco
 
     Because this object is purely data centric I used records in the dto 
 
-    ```bash
+    
     
     public record AccountDto(Long id, String name, Currency currency, BigDecimal balance,
                          Boolean treasury,Long fromAccountId,Long toAccountId,BigDecimal amount) {
 
 }
-```
+
 
 
 
