@@ -7,7 +7,7 @@ This project is a Spring Boot RESTful API for managing accounts and handling mon
 Tech Stack
 
 Backend: Spring Boot (Java 17+)
-Database: H2 / PostgreSQL
+Database: H2
 Build Tool: Maven
 Performance Testing: Gatling
 
@@ -143,3 +143,51 @@ private final AccountRepository accountRepository;
 }
 
 
+Also added better handling mechanisms under the Exception folder  to give more descriptive error messages 
+ here is a sample code for BadRequestException 
+
+public class BadRequestException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
+
+    private String message = "Bad Request.";
+
+
+    private List<String> errorList = new ArrayList<>();
+
+    public BadRequestException() {
+        super();
+    }
+
+    public BadRequestException(String message) {
+        super(message);
+        this.message = message;
+    }
+
+    public BadRequestException(String message, List<String> errorList) {
+        super(message);
+        this.message = message;
+        this.errorList = errorList;
+    }
+
+    public BadRequestException(Throwable cause) {
+        super(cause);
+    }
+
+    public BadRequestException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    @Override
+    public String toString() {
+        return message;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public List<String> getErrorList() {
+        return errorList;
+    }
+}
