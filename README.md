@@ -106,7 +106,8 @@ test/com/example/perfomance
 To be able to execute this class one has to use maven commands
 one  first has to start the Spring Boot web application.
 go to the project base directory and execute the following command: 
-mvn spring-boot:run.
+sh
+mvn spring-boot:run
 Once the application is started, you can run the Gatling simulation by executing
  mvn gatling:test.
 
