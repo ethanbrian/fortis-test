@@ -78,7 +78,7 @@ Transfer money between accounts
 
 }
 
-what distinguishes  a treasury account from a non-treasury account is on the request body ensure treasury field is true when account is treasury  "treasury":true, treasure field is true and vice versa when non-treasury is false.
+what distinguishes  a treasury account from a non-treasury account is on the request body ensure treasury field is true when account is treasury  "treasury":true, and ensure treasure field is false when account is  non-treasury "treasury":false .
 
 To run perfomance tests using Gatling ensure these dependencies are available 
 
