@@ -78,6 +78,51 @@ Transfer money between accounts
 
 }
 
-what distinguishes  a treasury account from a non-treasury account is on the request body ensure  "treasury":false, treasure field is true and vice versa when non-treasury is false.
+what distinguishes  a treasury account from a non-treasury account is on the request body ensure treasury field is true when account is treasury  "treasury":true, treasure field is true and vice versa when non-treasury is false.
+
+To run perfomance tests using Gatling ensure these dependencies are available 
+
+		<!-- Gatling Core -->
+		<dependency>
+			<groupId>io.gatling</groupId>
+			<artifactId>gatling-app</artifactId>
+			<version>3.7.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>io.gatling.highcharts</groupId>
+			<artifactId>gatling-charts-highcharts</artifactId>
+			<version>3.7.2</version>
+		</dependency>
+
+To run the test file which is located in the test folder under the perfomance folder
+here is he structure 
+
+src
+├── main
+│   ├── java/com/example/accountservice
+│   │   ├── controller
+│   │   │   ├── AccountController.java
+│   │   ├── model
+│   │   │   ├── Account.java
+│   │   ├── repository
+│   │   │   ├── AccountRepository.java
+│   │   ├── service
+│   │   │   ├── AccountService.java
+│   │   ├── AccountServiceApplication.java
+│   │   ├── test/com/example/perfomance
+│   │   │   ├── AccountTransferSimulation.java
+│   │   ├── AccountServiceApplication.java
+
+To be able to execute this class one has to use maven commands for the same 
+First begin by running To run the test, you first have to start the Spring Boot web application. 
+You can do this, for instance, by going to the project base directory and execute the following command: 
+mvn spring-boot:run.
+Once the application is started, you can run the Gatling simulation by executing
+ mvn gatling:test.
+
+ Remember these two commands one has to run them concurrently: start with mvn spring-boot:run then mvn gatling:test in another terminal concurrently
+
 
 
