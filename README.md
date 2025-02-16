@@ -208,20 +208,26 @@ public class BadRequestException extends RuntimeException {
 
 Another important feature I added is pagination on the Endpoint for listing accounts 
  Here is the snippet 
- ```bash
+ 
 
      public Page<Account> listAccounts(@RequestParam (name="page",defaultValue = "0")int page,
                                       @RequestParam (name="pageSize",defaultValue = "50")int pageSize){
         return accountRepository.findAll(PageRequest.of(page,pageSize));
     }
+    
 
     Assuming one has created multiple accounts it would be easy to view the acounts from the Backend.
 
     Because this object is purely data centric I used records in the dto 
+
+    ```bash
+    
     public record AccountDto(Long id, String name, Currency currency, BigDecimal balance,
                          Boolean treasury,Long fromAccountId,Long toAccountId,BigDecimal amount) {
 
 }
 ```
+
+
 
     That is the summary of the  project !! Happy Coding !!
