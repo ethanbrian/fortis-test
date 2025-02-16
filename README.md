@@ -201,4 +201,10 @@ Another important feature I added is pagination on the Endpoint for listing acco
 
     Assuming one has created multiple accounts it would be easy to view the acounts from the Backend.
 
+    Because this object is purely data centric I used records in the dto 
+    public record AccountDto(Long id, String name, Currency currency, BigDecimal balance,
+                         Boolean treasury,Long fromAccountId,Long toAccountId,BigDecimal amount) {
+
+}
+
     That is the summary of the  project !! Happy Coding !!
