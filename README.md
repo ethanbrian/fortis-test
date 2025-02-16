@@ -191,3 +191,14 @@ public class BadRequestException extends RuntimeException {
         return errorList;
     }
 }
+
+Another important feature I added is pagination on the Endpoint for listing accounts 
+ Here is the snippet 
+     public Page<Account> listAccounts(@RequestParam (name="page",defaultValue = "0")int page,
+                                      @RequestParam (name="pageSize",defaultValue = "50")int pageSize){
+        return accountRepository.findAll(PageRequest.of(page,pageSize));
+    }
+
+    Assuming one has created multiple accounts it would be easy to view the acounts from the Backend.
+
+    That is the summary project !! Happy Coding !!
