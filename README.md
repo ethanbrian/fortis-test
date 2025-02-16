@@ -100,20 +100,8 @@ To run the test file which is located in the test folder under the perfomance fo
 here is he structure 
 
 src
-├── main
-│   ├── java/com/example/accountservice
-│   │   ├── controller
-│   │   │   ├── AccountController.java
-│   │   ├── model
-│   │   │   ├── Account.java
-│   │   ├── repository
-│   │   │   ├── AccountRepository.java
-│   │   ├── service
-│   │   │   ├── AccountService.java
-│   │   ├── AccountServiceApplication.java
-│   │   ├── test/com/example/perfomance
-│   │   │   ├── AccountTransferSimulation.java
-│   │   ├── AccountServiceApplication.java
+test/com/example/perfomance
+ AccountTransferSimulation.java
 
 To be able to execute this class one has to use maven commands for the same 
 First begin by running To run the test, you first have to start the Spring Boot web application. 
