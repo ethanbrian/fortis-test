@@ -97,20 +97,20 @@ To run perfomance tests using Gatling ensure these dependencies are available
 		</dependency>
 
 To run the test file which is located in the test folder under the perfomance folder
-here is he structure 
+here is the structure 
 
 src
 test/com/example/perfomance
  AccountTransferSimulation.java
 
-To be able to execute this class one has to use maven commands for the same 
-First begin by running To run the test, you first have to start the Spring Boot web application. 
-You can do this, for instance, by going to the project base directory and execute the following command: 
+To be able to execute this class one has to use maven commands
+one  first has to start the Spring Boot web application.
+go to the project base directory and execute the following command: 
 mvn spring-boot:run.
 Once the application is started, you can run the Gatling simulation by executing
  mvn gatling:test.
 
- Remember these two commands one has to run them concurrently: start with mvn spring-boot:run then mvn gatling:test in another terminal concurrently
+Remember these two commands one has to run them concurrently: start with mvn spring-boot:run then mvn gatling:test in another terminal concurrently
 
 To ensure that the perfomance tests run perfectly without erroneous output I have added a code upon starting the application that loads data into the accounts . Here is the snippet 
 
