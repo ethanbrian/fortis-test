@@ -56,7 +56,7 @@ Retrieve account details
 
 POST
 
-/transfers  (from treasury accounts)
+/accounts/transfer  (from treasury accounts)
 
 Transfer money between accounts
 
@@ -67,7 +67,7 @@ Transfer money between accounts
 
 }
 
-/transfers  (from non-treasury accounts)
+/accounts/transfer (from non-treasury accounts)
 
 Transfer money between accounts
 
