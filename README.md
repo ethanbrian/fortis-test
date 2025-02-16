@@ -60,6 +60,7 @@ POST
 
 Transfer money between accounts
 
+
 {
     "fromAccountId":1,
     "toAccountId":2,
@@ -119,6 +120,7 @@ Remember these two commands one has to run them concurrently: start with mvn spr
 
 To ensure that the perfomance tests run perfectly without erroneous output I have added a code upon starting the application that loads data into the accounts . Here is the snippet 
 
+```bash
 @SpringBootApplication
 public class AccountsApplication implements CommandLineRunner {
 private final AccountRepository accountRepository;
@@ -146,11 +148,12 @@ private final AccountRepository accountRepository;
 }
 	}
 }
+```
 
 
 Also added better handling mechanisms under the Exception folder  to give more descriptive error messages 
  here is a sample code for BadRequestException 
-
+```bash
 public class BadRequestException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
@@ -196,9 +199,12 @@ public class BadRequestException extends RuntimeException {
         return errorList;
     }
 }
+```
 
 Another important feature I added is pagination on the Endpoint for listing accounts 
  Here is the snippet 
+ ```bash
+
      public Page<Account> listAccounts(@RequestParam (name="page",defaultValue = "0")int page,
                                       @RequestParam (name="pageSize",defaultValue = "50")int pageSize){
         return accountRepository.findAll(PageRequest.of(page,pageSize));
@@ -211,5 +217,6 @@ Another important feature I added is pagination on the Endpoint for listing acco
                          Boolean treasury,Long fromAccountId,Long toAccountId,BigDecimal amount) {
 
 }
+```
 
     That is the summary of the  project !! Happy Coding !!
