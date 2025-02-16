@@ -201,4 +201,4 @@ Another important feature I added is pagination on the Endpoint for listing acco
 
     Assuming one has created multiple accounts it would be easy to view the acounts from the Backend.
 
-    That is the summary project !! Happy Coding !!
+    That is the summary of the  project !! Happy Coding !!
