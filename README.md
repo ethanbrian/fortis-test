@@ -112,5 +112,34 @@ Once the application is started, you can run the Gatling simulation by executing
 
  Remember these two commands one has to run them concurrently: start with mvn spring-boot:run then mvn gatling:test in another terminal concurrently
 
+To ensure that the perfomance tests run perfectly without erroneous output I have added a code upon starting the application that loads data into the accounts . Here is the snippet 
+
+@SpringBootApplication
+public class AccountsApplication implements CommandLineRunner {
+private final AccountRepository accountRepository;
+
+    public AccountsApplication(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
+
+    public static void main(String[] args) {
+		SpringApplication.run(AccountsApplication.class, args);
+	}
+
+
+	@Override
+	public void run(String... args) throws Exception {
+		if(accountRepository.count()==0){
+			List<Account> defaultAccounts = Arrays.asList(
+					new Account("account1", Currency.getInstance("KES"), BigDecimal.valueOf(100000), false),
+					new Account("account2", Currency.getInstance("KES"), BigDecimal.valueOf(0), false),
+					new Account("account3", Currency.getInstance("KES"), BigDecimal.valueOf(1000), true)
+
+			);
+
+			accountRepository.saveAll(defaultAccounts);
+}
+	}
+}
 
 
