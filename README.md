@@ -16,6 +16,7 @@ Setup Instructions
 Prerequisites
 
 Java 17+
+IDE: IntelliJ IDEA
 Maven
 h2 in memory database i.e easy to run locally
 
