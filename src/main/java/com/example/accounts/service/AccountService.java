@@ -31,13 +31,11 @@ public class AccountService {
         BigDecimal balance = dto.balance();
         if(balance == null)
             balance = BigDecimal.ZERO;
-
-
+        if(balance.doubleValue()<0&& !dto.treasury())
+            throw new BadRequestException("Only Treasury Accounts can have negative balances");
 
         Account account = new Account(dto.name(), dto.currency(),balance, dto.treasury());
         return accountRepository.save(account);
-
-
     }
 
     public void transferMoney(Long fromAccountId, Long toAccountId, BigDecimal amount) {
